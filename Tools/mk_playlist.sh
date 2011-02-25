@@ -5,7 +5,7 @@ p_dir=$1
 
 if test -z ${p_dir} 
 then
-ap_dir="NULL"
+ap_dir=""
 else
 ap_dir=${p_dir}/
 fi
