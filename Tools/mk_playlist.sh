@@ -19,6 +19,7 @@ find ${cur_path}/${ap_dir} -name '*\.mp3' >> ${p_list}
 echo "Yes! this Dir is Correct \n Now Add Music to "${p_list}
 else
 echo "Nooooop! This Dir is Uncorrect"
+echo "Nooooop! This Dir is Uncorrect (" ${cur_path}/${ap_dir} ")"
 fi
 
 ## find ${cur_path}/ -name '*\.mp3' >>playlist_${today}.m3u
