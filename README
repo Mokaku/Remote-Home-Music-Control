@@ -1,7 +1,46 @@
-aaaaaaaaaaaaaaaaaaa
-sss
+######################################################
+#
+# Remote HOME Music Server Contorole Set
+#
+#     Wrote By  Mokan ( mokaku@gmail.com )
+######################################################
+
+< What's This ? >
+mpg123を利用してCUI環境から音楽を演奏させるための個人スクリプトセットです。
+Emasを使用している人は.elつかってある程度完成されたモノが出回ってるけど、
+Emacsを使いこなせていないためbash環境さえあれば動作するモノを作成
+
+< Require >
+mpg123
+ Ubuntuなら、apt-get
+ Fedora/CentOS系ならyumで一発で入ります
+（とはえsource forgeのレポジトリを入れる必要はあるかもしれない）
+
+< History  >
+# 2011-02-25
+ まずはPlayList 生成スクリプト作成
+ 適当な場所に設置し
+ 
+ $ mk_playlist.sh [sub directory] 
+
+ sub directory 以下のすべての「.mp3」拡張子付いたファイルが書き出される。
+ sub direcrtory を指定しない場合は、実行したディレクトリ配下のすべてのmp3ファイルが実行される。
+
+にて生成
+ 生成されるプレイリストは
+ playlist_[date:yymmdd].m3u
+ 名前形式にて生成される
+ mpg123の実行場所に左右されないようにフルパス形式にてリストは作成
 
 
-aaaaaaaaa
+mpg123実行時の形式
 
-aaaa
+-b (buffer size) は1000ぐらいにしておいた方が安定するっぽい
+
+# ランダム演奏
+ $ mpg123 -b 1000 -C -v -Z -z -@ <playlist_files>
+ $ mpg123 -b 1000 -C -v -z -@ <playlist_files>
+
+# リストの順番通りに
+ $ mpg123 -b 1000 -C -v -@ <playlist_files>
+
